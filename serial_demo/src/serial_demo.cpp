@@ -75,7 +75,7 @@ void unpack_uart(odom_t& odom,int& frame_id){
     // std::cout << std::endl;
 
     if(receive_buffer[0] == RHEAD_1 && receive_buffer[1] == RHEAD_2 && receive_buffer[LREV_LEN - 2] == RTILE_1 && receive_buffer[LREV_LEN - 1] == RTILE_2 ){
-        char check=0;
+        unsigned char check=0;
         //61-3
         for(int i = 2;i < LR_CHECK;i++){
             check += receive_buffer[i];
